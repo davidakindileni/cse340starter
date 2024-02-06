@@ -253,7 +253,7 @@ SET inv_image = REPLACE(
         '/images/vehicles'
     ),
     inv_thumbnail = REPLACE(
-        inv_image,
+        inv_thumbnail,
         '/images',
         '/images/vehicles'
     );
