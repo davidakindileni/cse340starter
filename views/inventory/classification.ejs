@@ -1,0 +1,15 @@
+<div class="container">
+    <!-- The Content Heading -->
+    <% if (title) { %>
+        <h1><%= title %></h1>
+        <% } else {
+          res.redirect('/')
+        } %>
+    
+    <%# messages() %>
+    
+    <!-- The Inventory Items Display -->
+    <div class="veh-container">
+        <%- grid %>
+    </div>
+</div>
