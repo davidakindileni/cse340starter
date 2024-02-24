@@ -35,7 +35,7 @@ Util.buildClassificationGrid = async function(data){
       grid += '<li class="veh-card">'
       grid +=  '<a href="../../inv/detail/'+ vehicle.inv_id 
       + '" title="View ' + vehicle.inv_make + ' '+ vehicle.inv_model 
-      + 'details"><img src="' + vehicle.inv_thumbnail 
+      + ' details"><img src="' + vehicle.inv_thumbnail 
       +'" alt="Image of '+ vehicle.inv_make + ' ' + vehicle.inv_model 
       +' on CSE Motors" /></a>'
       grid += '<div class="namePrice">'
@@ -51,6 +51,40 @@ Util.buildClassificationGrid = async function(data){
       grid += '</li>'
     })
     grid += '</ul>'
+  } else { 
+    grid += '<p class="notice">Sorry, no matching vehicles could be found.</p>'
+  }
+  return grid
+}
+
+/* **************************************
+* Build the vehicle details view HTML
+* ************************************ */
+Util.buildVehicleGrid = async function(data){
+  let grid
+  if(data.length > 0){
+    console.log(data)
+    // grid = '<ul id="inv-display">'
+    // data.forEach(vehicle => { 
+    //   grid += '<li class="veh-card">'
+    //   grid +=  '<a href="../../inv/detail/'+ vehicle.inv_id 
+    //   + '" title="View ' + vehicle.inv_make + ' '+ vehicle.inv_model 
+    //   + ' details"><img src="' + vehicle.inv_thumbnail 
+    //   +'" alt="Image of '+ vehicle.inv_make + ' ' + vehicle.inv_model 
+    //   +' on CSE Motors" /></a>'
+    //   grid += '<div class="namePrice">'
+    //   grid += '<hr />'
+    //   grid += '<h2>'
+    //   grid += '<a href="../../inv/detail/' + vehicle.inv_id +'" title="View ' 
+    //   + vehicle.inv_make + ' ' + vehicle.inv_model + ' details">' 
+    //   + vehicle.inv_make + ' ' + vehicle.inv_model + '</a>'
+    //   grid += '</h2>'
+    //   grid += '<p><span>$' 
+    //   + new Intl.NumberFormat('en-US').format(vehicle.inv_price) + '</span></p>'
+    //   grid += '</div>'
+    //   grid += '</li>'
+    // })
+    // grid += '</div>'
   } else { 
     grid += '<p class="notice">Sorry, no matching vehicles could be found.</p>'
   }
