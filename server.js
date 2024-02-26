@@ -26,13 +26,19 @@ app.set("layout", "./layouts/layout") // not at views root
 /* ***********************
  * Routes
  *************************/
-app.use(static)
+// app.use(static)
+app.use(utilities.handleErrors(static))
 
 // Index route
 app.get("/", utilities.handleErrors(baseController.buildHome))
 
 // Inventory route
 app.use("/inv", utilities.handleErrors(inventoryRoute))
+
+// footer link error 500
+app.use("/checkerror", async (req, res, next) => {
+  next({status: 500, message: 'HTTP: Error 500'})
+})
 
 // File Not Found Route - must be last route in list
 app.use(async (req, res, next) => {
@@ -42,7 +48,7 @@ app.use(async (req, res, next) => {
 /* ***********************
 * Express Error Handler
 * Place after all other middleware
-*************************/
+************************ */
 app.use(async (err, req, res, next) => {
   let nav = await utilities.getNav()
   console.error(`Error at: "${req.originalUrl}": ${err.message}`)
@@ -70,5 +76,5 @@ const host = process.env.HOST
  * Log statement to confirm server operation
  *************************/
 app.listen(port, () => {
-  console.log(`app listening on ${host}:${port}`)
+  console.log(`App listening on ${host}:${port}`)
 })
