@@ -57,6 +57,11 @@ h1 {
   font-size: 6.5vw;
 }
 
+.notice {
+  color: red;
+  font-style: italic;
+}
+
 h2 {
   color:#09345a;
 }
@@ -265,6 +270,100 @@ footer p {
   padding-left: 15px;
   margin: 20px 0;
 }
+/*--------------- Login Form ------------------*/
+
+.form-container {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+        
+.form-container label {
+  font-size: 0.9rem; 
+}
+        
+.form-content {
+  background-color: rgb(123, 204, 241);
+  margin: 5% auto 5% auto;
+  width: clamp(25ch, 45%, 40ch);
+  padding: 5px;
+}
+
+
+.form-fields {
+  margin: 10px;
+  border: 1px solid #fff;
+  padding: 15px;
+}
+
+.form-container input[type=text], input[type=email], input[type=password] {
+  width: 100%;
+  padding: 5px 10px;
+  margin: 4px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 1vw; 
+}
+
+.form-container button {
+  background-color: #09345a;
+  color: white;
+  padding: 8px 0;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  width: 70px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-submit-btn {
+  margin:0;
+  text-align: center;
+  align-items: center;
+}
+
+.form-container button:hover {
+  opacity: 0.8;
+}
+
+.pwd-text, .fields-req {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.fields-req {
+  margin: 5px 0 5px 5px;
+  color: red;
+}
+
+.signup {
+  margin: 0;
+  text-align: center;
+  padding: 8px 0;
+}
+
+.form-content .signup p {
+  margin: 0;
+}
+
+.show-pwd-btn {
+  font-size: 10px;
+  border-radius: 12px;
+  background-color: grey;
+  padding: 5px;
+}
+
+.show-pwd-btn:hover {
+  margin-top: 7px;
+  background-color: #fff;
+  color: #09345a;
+  font-weight: bold;
+}
+
 /*--------------- Vehicle Inventory Display ------------------*/
 
 .container {
