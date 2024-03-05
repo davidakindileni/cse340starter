@@ -7,14 +7,21 @@
         } %>
     
     <%- messages() %>
+    <% if (errors) { %>
+        <ul class="notice">
+       <% errors.array().forEach(error => { %>
+         <li><%= error.msg %></li>
+      <%  }) %>
+       </ul>
+      <% } %>
     
     <!-- The Login View -->
     <div class="form-container">
-        <form class="login-form" method = "post">
+        <form class="login-form" action="/account/login" method = "post">
             <div class="form-content">
                 <div class="form-fields">
                     <label for="account_email"><b>Email Address:</b></label>
-                    <input type="email" id="account_email" name="account_email" placeholder="youremail@email.com" autofocus required>
+                    <input type="email" id="account_email" name="account_email" placeholder="youremail@email.com" autofocus required value="<%= locals.account_email %>">>
                     <label for="account_password"><b>Password:</b></label><br>
                     <input type="password" id="account_password" name="account_password" placeholder="Enter your password" 
                     pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$" required>

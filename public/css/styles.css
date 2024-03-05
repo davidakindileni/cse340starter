@@ -364,6 +364,21 @@ footer p {
   font-weight: bold;
 }
 
+/*--------------- Form Validation ------------------*/
+input:required:invalid, input:focus:invalid {
+  /* insert your own styles for invalid form input */
+    background-image: url(/images/invalid.png);
+    background-position: right top;
+    background-repeat: no-repeat;
+}
+
+ input:required:valid {
+  /* insert your own styles for valid form input */
+    background-image: url(/images/valid.png);
+    background-position: right top;
+    background-repeat: no-repeat;
+}
+
 /*--------------- Vehicle Inventory Display ------------------*/
 
 .container {

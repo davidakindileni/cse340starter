@@ -7,6 +7,13 @@
         } %>
     
     <%- messages() %>
+    <% if (errors) { %>
+        <ul class="notice">
+       <% errors.array().forEach(error => { %>
+         <li><%= error.msg %></li>
+      <%  }) %>
+       </ul>
+      <% } %>
     
     <!-- The Register View -->
     <div class="form-container">
@@ -15,11 +22,11 @@
                 <p class="fields-req">*** All fields are required. ***</p>
                 <div class="form-fields">
                     <label for="account_firstname"><b>First name:</b></label>
-                    <input type="text" id="account_firstname" name="account_firstname" placeholder="First name" autofocus required>
+                    <input type="text" id="account_firstname" name="account_firstname" placeholder="First name" autofocus required value="<%= locals.account_firstname %>">>
                     <label for="account_lastname"><b>Last name:</b></label>
-                    <input type="text" id="account_lastname" name="account_lastname" placeholder="Last name" required>
+                    <input type="text" id="account_lastname" name="account_lastname" placeholder="Last name" required value="<%= locals.account_lastname %>">>
                     <label for="account_email"><b>Email Address:</b></label>
-                    <input type="email" id="account_email" name="account_email" placeholder="youremail@email.com" required>
+                    <input type="email" id="account_email" name="account_email" placeholder="youremail@email.com" required value="<%= locals.account_email %>">>
                     <label for="account_password"><b>Password:</b></label><br>
                     <input type="password" id="account_password" name="account_password" placeholder="Enter your password" 
                     pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$" required>
