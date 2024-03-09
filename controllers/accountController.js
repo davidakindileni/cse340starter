@@ -1,11 +1,11 @@
 const accountModel = require("../models/account-model")
-const bcrypt = require("bcryptjs")
 const utilities = require("../utilities/")
+const bcrypt = require("bcryptjs")
 
 const accountCont = {};
 
 /* ****************************************
-*  Deliver login view
+*  Deliver user login view
 * *************************************** */
 accountCont.buildLogin = async function(req, res, next) {
     let nav = await utilities.getNav()
@@ -14,7 +14,7 @@ accountCont.buildLogin = async function(req, res, next) {
   };
   
 /* ****************************************
-*  Deliver registration view
+*  Deliver user registration view
 * *************************************** */
 accountCont.buildRegistration = async function(req, res, next) {
   let nav = await utilities.getNav()
@@ -23,7 +23,7 @@ accountCont.buildRegistration = async function(req, res, next) {
 };
 
 /* ****************************************
-*  Process Registration
+*  Process New User Account Registration
 * *************************************** */
 accountCont.registerAccount = async function(req, res) {
   let nav = await utilities.getNav()
@@ -53,7 +53,7 @@ try {
   if (regResult) {
     req.flash(
       "notice",
-      `Congratulations, you\'re registered ${account_firstname}. Please log in.`
+      `Congratulations! You\'ve registered ${account_firstname}. Please log in.`
     )
     res.status(201).render("./account/login", {
       title: "Login",

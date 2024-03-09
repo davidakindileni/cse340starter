@@ -26,6 +26,6 @@ router.post("/login",
     utilities.handleErrors((req, res) => {
       res.status(200).send('Login succesful')
     })
-  )
+);
   
 module.exports = router;

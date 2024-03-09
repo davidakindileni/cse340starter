@@ -1,0 +1,32 @@
+<div class="container">
+    <!-- The Content Heading -->
+    <% if (title) { %>
+        <h1><%= title %></h1>
+        <% } else {
+          res.redirect('/')
+    } %>
+    
+    <%- messages() %>
+    <% if (errors) { %>
+            <ul class="notice">
+                <% errors.array().forEach(error => { %>
+                    <li><%= error.msg %></li>
+                <%  }) %>
+            </ul>
+    <% } %>
+    
+    <!-- Add New Classification -->
+    <div class="form-container">
+        <form class="login-form" action="/inv/addNewClass" method = "post">
+            <div class="form-content">
+                <p class="fields-req">*** Field is required. ***</p>
+                <div class="form-fields">
+                    <label for="classification_name"><b>Classification Name:</b></label>
+                    <p class="fields-notice">(Alphabetical characters only. No spaces or special characters.)</p>
+                    <input type="text" id="classification_name" name="classification_name" placeholder="Min 3 characters" pattern="[a-zA-Z]{3,}" autofocus required>
+                    <button class="submit-btn" type="submit" name="addClass">Add Classification</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

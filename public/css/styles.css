@@ -15,7 +15,7 @@
 
 body {
   margin: 0px auto 10px auto;
-  max-width: 750px;
+  max-width: 750px/* fit-content */;
   font-family: 'Poppins', sans-serif;
   background-size: 300px 300px; 
 }
@@ -284,8 +284,8 @@ footer p {
 }
         
 .form-content {
-  background-color: rgb(123, 204, 241);
-  margin: 5% auto 5% auto;
+  background-color: #7bccf1;
+  margin: 3% auto 3% auto;
   width: clamp(25ch, 45%, 40ch);
   padding: 5px;
 }
@@ -297,7 +297,7 @@ footer p {
   padding: 15px;
 }
 
-.form-container input[type=text], input[type=email], input[type=password] {
+.form-container input[type=text], input[type=email], input[type=password], select {
   width: 100%;
   padding: 5px 10px;
   margin: 4px 0;
@@ -310,17 +310,17 @@ footer p {
 .form-container button {
   background-color: #09345a;
   color: white;
-  padding: 8px 0;
-  margin: 0;
+  padding: 8px 10px;
+  margin-top: 10px;
   border: none;
   cursor: pointer;
-  width: 70px;
+  width: fit-content;
   text-align: center;
   align-items: center;
   justify-content: center;
 }
 
-.login-submit-btn {
+.submit-btn {
   margin:0;
   text-align: center;
   align-items: center;
@@ -337,7 +337,7 @@ footer p {
 
 .fields-req {
   margin: 5px 0 5px 5px;
-  color: red;
+  color: #112A46;;
 }
 
 .signup {
@@ -350,11 +350,17 @@ footer p {
   margin: 0;
 }
 
+.register-link {
+  color: #09345a;
+}
+
 .show-pwd-btn {
-  font-size: 10px;
+  font-size: 12px;
   border-radius: 12px;
-  background-color: grey;
+  background-color: black;
   padding: 5px;
+  color: #fff;
+
 }
 
 .show-pwd-btn:hover {
@@ -365,18 +371,20 @@ footer p {
 }
 
 /*--------------- Form Validation ------------------*/
-input:required:invalid, input:focus:invalid {
+input:required:invalid, input:focus:invalid, select:required:invalid, select:focus:invalid{
   /* insert your own styles for invalid form input */
-    background-image: url(/images/invalid.png);
+    /* background-image: url(/images/invalid.png);
     background-position: right top;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
+    background-color: rgb(228, 187, 172);
 }
 
- input:required:valid {
+ input:required:valid, select:required:valid {
   /* insert your own styles for valid form input */
-    background-image: url(/images/valid.png);
+    /* background-image: url(/images/valid.png);
     background-position: right top;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
+    background-color: rgb(155, 221, 142);
 }
 
 /*--------------- Vehicle Inventory Display ------------------*/
@@ -485,6 +493,25 @@ input:required:invalid, input:focus:invalid {
 .price-label, .description-label, .color-label, .miles-label {
   font-weight: bold;
 }
+
+/*--------------- Vehicle Management Menu ------------------*/
+
+.vehMgmtMenu {
+  margin-left: 40px;
+}
+
+
+/*--------------- Add new Classification ------------------*/
+.fields-notice {
+  font-size: 12px;
+}
+
+
+/*--------------- Add New Vehicle ------------------*/
+
+
+
+
 
 @media (min-width: 750px) {
   .hide-sm {

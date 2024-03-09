@@ -69,11 +69,6 @@ app.use("/account", utilities.handleErrors(accountRoute))
 // Inventory route
 app.use("/inv", utilities.handleErrors(inventoryRoute))
 
-// // footer link error 500
-// app.use("/checkerror", async (req, res, next) => {
-//   next({status: 500, message: 'HTTP: Error 500'})
-// })
-
 // File Not Found Route - must be last route in list
 app.use(async (req, res, next) => {
   next({status: 404, message: 'Sorry, we appear to have lost that page.'})
@@ -110,5 +105,5 @@ const host = process.env.HOST
  * Log statement to confirm server operation
  *************************/
 app.listen(port, () => {
-  console.log(`App listening on ${host}:${port}`)
+  console.log(`App is listening on ${host}:${port}`)
 })

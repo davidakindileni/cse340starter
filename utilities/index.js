@@ -83,6 +83,21 @@ Util.buildVehicleGrid = async function(data){
   return grid
 }
 
+/* **************************************
+* Build the classification Select Option  HTML
+* ************************************ */
+Util.buildClassSelectOption = async function (req, res, next) {
+  let data = await invModel.getClassifications()
+  list = '<select name="classification_id" id="classification_id" autofocus required>'
+  list += '<option value="">-- Choose a classification --</option>'
+  data.rows.forEach((row) => {
+    list +=
+      '<option value="' + row.classification_id + '">' + row.classification_name + '</option>'
+  })
+  list += "</select>"
+  return list
+}
+
 /* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for 

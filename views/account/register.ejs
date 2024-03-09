@@ -1,4 +1,4 @@
-<div class="login-form-container">
+<div class="container">
     <!-- The Content Heading -->
     <% if (title) { %>
         <h1><%= title %></h1>
@@ -22,16 +22,16 @@
                 <p class="fields-req">*** All fields are required. ***</p>
                 <div class="form-fields">
                     <label for="account_firstname"><b>First name:</b></label>
-                    <input type="text" id="account_firstname" name="account_firstname" placeholder="First name" autofocus required value="<%= locals.account_firstname %>">>
+                    <input type="text" id="account_firstname" name="account_firstname" placeholder="First name" autofocus required value="<%= locals.account_firstname %>">
                     <label for="account_lastname"><b>Last name:</b></label>
-                    <input type="text" id="account_lastname" name="account_lastname" placeholder="Last name" required value="<%= locals.account_lastname %>">>
+                    <input type="text" id="account_lastname" name="account_lastname" placeholder="Last name" required value="<%= locals.account_lastname %>">
                     <label for="account_email"><b>Email Address:</b></label>
-                    <input type="email" id="account_email" name="account_email" placeholder="youremail@email.com" required value="<%= locals.account_email %>">>
+                    <input type="email" id="account_email" name="account_email" placeholder="youremail@email.com" required value="<%= locals.account_email %>">
                     <label for="account_password"><b>Password:</b></label><br>
                     <input type="password" id="account_password" name="account_password" placeholder="Enter your password" 
                     pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$" required>
                     <span class="show-pwd-btn">Show password</span><p class="pwd-text">(Passwords must be at least 12 characters and include one uppercase letter, one lowercase letter, one number, and one non-alphanumeric character.)</p>
-                    <button class="login-submit-btn" type="submit" name="login">Register</button>
+                    <button class="submit-btn" type="submit" name="register">Register</button>
                 </div>
             </div>
         </form>
