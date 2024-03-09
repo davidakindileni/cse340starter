@@ -132,7 +132,6 @@ validate.addNewClassRules = () => {
     body("classification_name")
       .trim()
       .isLength({ min: 3 })
-      .isAlpha()
       .withMessage("Please provide a valid classification name.") // on error this message is sent.
       .custom(async (classification_name) => {
         const classExists = await invModel.checkExistingClass(classification_name)
