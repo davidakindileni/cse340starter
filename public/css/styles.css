@@ -304,7 +304,7 @@ footer p {
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
-  font-size: 1vw; 
+  font-size: 0.8em; 
 }
 
 .form-container button {
@@ -370,6 +370,9 @@ footer p {
   font-weight: bold;
 }
 
+.login-successful-msg {
+  margin-left: 15px;
+}
 /*--------------- Form Validation ------------------*/
 input:required:invalid, input:focus:invalid, select:required:invalid, select:focus:invalid{
   /* insert your own styles for invalid form input */
@@ -642,5 +645,16 @@ input:required:invalid, input:focus:invalid, select:required:invalid, select:foc
     text-align: center;
   }
 
+  .form-container input[type=text], input[type=email], input[type=password], select {
+    width: 100%;
+    padding: 5px 10px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 1.2vw; 
+  }
+  
+  
  
 }

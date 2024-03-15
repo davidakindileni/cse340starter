@@ -7,6 +7,7 @@
 /* ***********************
  * Require Statements
  *************************/
+const cookieParser = require("cookie-parser")
 const session = require("express-session")
 const pool = require('./database/')
 const expressLayouts = require("express-ejs-layouts")
@@ -42,6 +43,11 @@ app.use(function(req, res, next){
   next()
 })
 
+// Cookie-parser
+app.use(cookieParser())
+
+// JWT 
+app.use(utilities.checkJWTToken)
 
 // Body-parser
 app.use(bodyParser.json())

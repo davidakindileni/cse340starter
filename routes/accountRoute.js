@@ -5,13 +5,23 @@ const router = new express.Router()
 const utilities = require("../utilities/")
 const accountController = require("../controllers/accountController")
 
-
+// LOGIN processes
 // Login route
-router.get("/login", utilities.handleErrors(accountController.buildLogin));
+router.get("/login", utilities.handleErrors(accountController.buildLogin)
+);
 
+// Process the login attempt
+router.post("/login",
+    regValidate.loginRules(),
+    regValidate.checkLoginData,
+    utilities.handleErrors(accountController.accountLogin)
+);
+  
+// REGISTER processes
 // register route
 router.get("/register", utilities.handleErrors(accountController.buildRegistration));
 
+// POST requests
 // process registration of Account
 router.post("/register",
     regValidate.registationRules(),
@@ -19,13 +29,16 @@ router.post("/register",
     utilities.handleErrors(accountController.registerAccount)
 );
 
-// Process the login attempt
-router.post("/login",
-    regValidate.loginRules(),
-    regValidate.checkLoginData,
-    utilities.handleErrors((req, res) => {
-      res.status(200).send('Login succesful')
-    })
+// ACCOUNT PROCESSES
+// account route
+router.get("/",
+    utilities.checkLogin,
+    utilities.handleErrors(accountController.buildAcctMgmt)
 );
-  
+
+// account management route
+// router.get("/management",
+//     utilities.handleErrors(accountController.buildAcctMgmt)
+// );
+
 module.exports = router;
