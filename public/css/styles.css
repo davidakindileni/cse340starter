@@ -298,10 +298,10 @@ footer p {
 }
 
 .form-container input[type=text], input[type=email], input[type=password], select {
-  width: 100%;
+  width: 95%;
   padding: 5px 10px;
   margin: 4px 0;
-  display: inline-block;
+  display: block;
   border: 1px solid #ccc;
   box-sizing: border-box;
   font-size: 0.8em; 
@@ -503,6 +503,9 @@ input:required:invalid, input:focus:invalid, select:required:invalid, select:foc
   margin-left: 40px;
 }
 
+.vehmgmt {
+  padding-left: 10px;
+}
 
 /*--------------- Add new Classification ------------------*/
 .fields-notice {
@@ -516,7 +519,7 @@ input:required:invalid, input:focus:invalid, select:required:invalid, select:foc
 
 
 
-@media (min-width: 750px) {
+@media (min-width: 760px) {
   .hide-sm {
     display: initial;
   }
@@ -646,10 +649,10 @@ input:required:invalid, input:focus:invalid, select:required:invalid, select:foc
   }
 
   .form-container input[type=text], input[type=email], input[type=password], select {
-    width: 100%;
+    width: 18rem;
     padding: 5px 10px;
     margin: 4px 0;
-    display: inline-block;
+    display: block;
     border: 1px solid #ccc;
     box-sizing: border-box;
     font-size: 1.2vw; 
