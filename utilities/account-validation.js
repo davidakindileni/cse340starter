@@ -247,7 +247,7 @@ validate.addNewVehRules = () => {
       inv_color,
       classification_id,
       } = req.body
-    const vehClass = await utilities.buildClassSelectOption()
+    const vehClass = await utilities.buildClassSelectOption(classification_id)
     let errors = []
     errors = validationResult(req)
     if (!errors.isEmpty()) {
@@ -256,7 +256,7 @@ validate.addNewVehRules = () => {
         errors,
         title: "Add New Vehicle",
         nav,
-        vehClass,
+        vehClass: vehClass,
         classification_id,
         inv_make,
         inv_model,

@@ -36,9 +36,5 @@ router.get("/",
     utilities.handleErrors(accountController.buildAcctMgmt)
 );
 
-// account management route
-// router.get("/management",
-//     utilities.handleErrors(accountController.buildAcctMgmt)
-// );
 
 module.exports = router;

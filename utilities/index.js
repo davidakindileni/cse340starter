@@ -88,35 +88,20 @@ Util.buildVehicleGrid = async function(data){
 /* **************************************
 * Build the classification Select Option  HTML
 * ************************************ */
-Util.buildClassSelectOption = async function (req, res, next) {
+Util.buildClassSelectOption = async function (classification_id) {
   let data = await invModel.getClassifications()
   list = '<select name="classification_id" id="classificationList" autofocus required>'
   list += '<option value="">-- Choose a classification --</option>'
   data.rows.forEach((row) => {
-    list += '<option value="' + row.classification_id + '">'
-    // if (classification_id != null &&  row.classification_id == classification_id){
-    //   list += " selected ";
-    // }
-    list += row.classification_name + '</option>'
+    list += '<option value="' + row.classification_id + '"'
+    if (classification_id != null &&  row.classification_id == classification_id){
+      list += ' selected ';
+    }
+    list += '>' + row.classification_name + '</option>'
   })
   list += "</select>"
   return list
-}// Util.buildClassSelectOption = async function (req, res, next) {
-//   let data = await invModel.getClassifications()
-//   list = ""
-//   list = '<select name="classification_id" id="classificationList" autofocus required>'
-//   list += '<option>-- Choose a classification --</option>'
-//   data.rows.forEach((row) => {
-//     list += '<option value="' + row.classification_id + '"';
-//     // console.log("classification_id", classification_id, "row.classification_id", row.classification_id)
-//     // if (classification_id != null &&  row.classification_id == classification_id){
-//     //   list += " selected ";
-//     // }
-//     list += ">" + row.classification_name + "</option>";
-//   });
-//   list += "</select>";
-//   return list
-// }
+}
 
 /* ****************************************
  * Middleware For Handling Errors
