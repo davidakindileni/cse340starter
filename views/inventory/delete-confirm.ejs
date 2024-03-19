@@ -1,0 +1,41 @@
+<!-- The Content Heading -->
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <% } else {
+        res.redirect('/')
+} %>
+
+<%- messages() %>
+<% if (errors) { %>
+        <ul class="notice">
+            <% errors.array().forEach(error => { %>
+                <li><%= error.msg %></li>
+            <%  }) %>
+        </ul>
+<% } %>
+
+<!-- The Confirm Delete Inventory View -->
+<div class="form-container">
+    <form class="login-form" id="deleteForm" action="/inv/delete" method = "post">
+        <div class="form-content">
+            <p class="fields-req">*** Confirm Deletion - The delete is permanent. ***</p>
+            <div class="form-fields">
+                <label for="inv_make"><b>Make:</b></label>
+                <input type="text" id="inv_make" name="inv_make" placeholder="Enter vehicle make ..." readonly value="<%= locals.inv_make %>">
+
+                <label for="inv_model"><b>Model:</b></label>
+                <input type="text" id="inv_model" name="inv_model" placeholder="Enter vehicle model ..." readonly value="<%= locals.inv_model %>">
+
+                <label for="inv_price"><b>Price:</b></label>
+                <input type="text" id="inv_price" name="inv_price" placeholder="Decimal or integer" pattern="\d+(\.\d{2})?" readonly value="<%= locals.inv_price %>">
+
+                <label for="inv_year"><b>Year:</b></label>
+                <input type="text" id="inv_year" name="inv_year" placeholder="4-digit year" pattern="\d{4,4}" readonly value="<%= locals.inv_year %>">
+
+                <button class="submit-btn" type="submit" name="delete">Delete Vehicle</button>
+                <input type="hidden" name="inv_id" <% if(locals.inv_id) { %> value="<%= locals.inv_id %>" <% } %>>
+            </div>
+        </div>
+    </form>
+</div>
+

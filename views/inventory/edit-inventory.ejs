@@ -50,7 +50,7 @@
                 <label for="inv_color"><b>Color:</b></label>
                 <input type="text" id="inv_color" name="inv_color" pattern="\w{3,}" required value="<%= locals.inv_color %>">
 
-                <button class="update-btn" type="button" name="update" disabled>Update Vehicle</button>
+                <button class="update-btn" type="submit" name="update" disabled>Update Vehicle</button>
                 <input type="hidden" name="inv_id" <% if(locals.inv_id) { %> value="<%= locals.inv_id %>" <% } %>>
             </div>
         </div>
