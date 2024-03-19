@@ -44,4 +44,9 @@ router.get("/getInventory/:classification_id", utilities.handleErrors(invControl
 // Route to modify inventory (vehicle) details
 router.get("/edit/:inv_id", utilities.handleErrors(invController.editInventory));
 
+router.post("/update/",
+    invValidate.addNewVehRules(),
+    invValidate.checkUpdateData,
+    utilities.handleErrors(invController.updateInventory))
+
 module.exports = router;

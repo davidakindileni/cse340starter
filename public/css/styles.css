@@ -314,7 +314,7 @@ textarea {
   height: 100px;
 }
 
-.form-container button {
+.submit-btn {
   background-color: #09345a;
   color: white;
   padding: 8px 10px;
@@ -325,6 +325,17 @@ textarea {
   text-align: center;
   align-items: center;
   justify-content: center;
+}
+
+.update-btn {
+  padding: 8px 10px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+  width: fit-content;
+  text-align: center;
+  align-items: center;
+  justify-content: center; 
 }
 
 .submit-btn {
