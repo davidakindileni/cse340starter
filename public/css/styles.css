@@ -297,14 +297,21 @@ footer p {
   padding: 15px;
 }
 
-.form-container input[type=text], input[type=email], input[type=password], select {
+.form-container input[type=text], input[type=email], input[type=password], textarea, select {
   width: 95%;
   padding: 5px 10px;
   margin: 4px 0;
   display: block;
   border: 1px solid #ccc;
   box-sizing: border-box;
+  overflow-wrap: normal;
   font-size: 0.8em; 
+}
+
+textarea {
+  font-family: 'Poppins', sans-serif;
+  resize: none;
+  height: 100px;
 }
 
 .form-container button {
@@ -373,20 +380,16 @@ footer p {
 .login-successful-msg {
   margin-left: 15px;
 }
+
 /*--------------- Form Validation ------------------*/
-input:required:invalid, input:focus:invalid, select:required:invalid, select:focus:invalid{
+input:required:invalid, input:focus:invalid, select:required:invalid, select:focus:invalid,
+textarea:required:invalid, textarea:focus:invalid {
   /* insert your own styles for invalid form input */
-    /* background-image: url(/images/invalid.png);
-    background-position: right top;
-    background-repeat: no-repeat; */
     background-color: rgb(228, 187, 172);
 }
 
- input:required:valid, select:required:valid {
+ input:required:valid, select:required:valid, textarea:required:valid {
   /* insert your own styles for valid form input */
-    /* background-image: url(/images/valid.png);
-    background-position: right top;
-    background-repeat: no-repeat; */
     background-color: rgb(155, 221, 142);
 }
 
@@ -648,7 +651,7 @@ input:required:invalid, input:focus:invalid, select:required:invalid, select:foc
     text-align: center;
   }
 
-  .form-container input[type=text], input[type=email], input[type=password], select {
+  .form-container input[type=text], input[type=email], input[type=password], textarea, select {
     width: 18rem;
     padding: 5px 10px;
     margin: 4px 0;
@@ -657,7 +660,6 @@ input:required:invalid, input:focus:invalid, select:required:invalid, select:foc
     box-sizing: border-box;
     font-size: 1.2vw; 
   }
-  
   
  
 }

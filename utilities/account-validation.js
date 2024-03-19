@@ -177,13 +177,14 @@ validate.addNewVehRules = () => {
     // vehicle make is required and must be string
     body("inv_make")
       .trim()
-      .isLength({ min: 3 })
+      .not().isEmpty()
+      // .isLength({ min: 3 })
       .withMessage("Please provide a vehicle make."), // on error this message is sent.
 
     // vehicle model is required and must be string
     body("inv_model")
       .trim()
-      .isLength({ min: 3 })
+      .not().isEmpty()
       .withMessage("Please provide a vehicle model."), // on error this message is sent.
 
     // vehicle description is required and must be string

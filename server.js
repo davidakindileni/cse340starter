@@ -66,7 +66,7 @@ app.set("layout", "./layouts/layout") // not at views root
 // app.use(static)
 app.use(utilities.handleErrors(static))
 
-// Index route
+// Index (home page) route
 app.get("/", utilities.handleErrors(baseController.buildHome))
 
 // Account login

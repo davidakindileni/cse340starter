@@ -5,14 +5,8 @@ const router = new express.Router()
 const utilities = require("../utilities/")
 const invController = require("../controllers/invController")
 
-// Route to build inventory by classification view
+// Build inventory by classification view route
 router.get("/type/:classificationId", utilities.handleErrors(invController.buildByClassificationId));
-
-// Route to build vehicle details for vehicle view
-router.get("/detail/:vehicleId", utilities.handleErrors(invController.buildByVehicleId));
-
-// Vehicle Management Route
-router.get("/", utilities.handleErrors(invController.buildVehicleMgmt));
 
 // Add New Classification Route
 router.get("/addNewClass",
@@ -26,6 +20,9 @@ router.post("/addNewClass",
     utilities.handleErrors(invController.processNewClass)
 );
 
+// Build vehicle details for vehicle view route
+router.get("/detail/:vehicleId", utilities.handleErrors(invController.buildByVehicleId));
+
 // Add New Vehicle Route
 router.get("/addNewVeh",
     utilities.handleErrors(invController.addNewVeh)
@@ -38,7 +35,13 @@ router.post("/addNewVeh",
     utilities.handleErrors(invController.processNewVeh)
 );
 
-// Vehicle management route
+// Build vehicle management Route
+router.get("/", utilities.handleErrors(invController.buildVehicleMgmt));
+
+// Get vehicle inventory by classification  route
 router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON))
+
+// Route to modify inventory (vehicle) details
+router.get("/edit/:inv_id", utilities.handleErrors(invController.editInventory));
 
 module.exports = router;

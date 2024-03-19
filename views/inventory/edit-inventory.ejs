@@ -14,14 +14,15 @@
         </ul>
 <% } %>
 
-<!-- The Add New Vehicle  View -->
+<!-- The Edit Vehicle  View -->
 <div class="form-container">
-    <form class="login-form" action="/inv/addNewVeh" method = "post">
+    <form class="login-form" action="/inv/update" method = "post">
         <div class="form-content">
             <p class="fields-req">*** All fields are required. ***</p>
             <div class="form-fields">
                 <label for="classificationList"><b>Classification:</b></label>
                 <%- vehClass %>
+                <% console.log(vehClass) %>
 
                 <label for="inv_make"><b>Make:</b></label>
                 <input type="text" id="inv_make" name="inv_make" placeholder="Enter vehicle make ..." required value="<%= locals.inv_make %>">
@@ -50,7 +51,7 @@
                 <label for="inv_color"><b>Color:</b></label>
                 <input type="text" id="inv_color" name="inv_color" pattern="\w{3,}" required value="<%= locals.inv_color %>">
 
-                <button class="submit-btn" type="submit" name="register">Add Vehicle</button>
+                <button class="submit-btn" type="submit" name="register">Update Vehicle</button>
             </div>
         </div>
     </form>
