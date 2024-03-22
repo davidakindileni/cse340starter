@@ -100,6 +100,14 @@ accountCont.accountLogin = async function(req, res) {
           res.cookie("jwt", accessToken, { httpOnly: true, secure: true, maxAge: 3600 * 1000 })
       }
       return res.redirect("/account")
+    } else {
+      req.flash("notice", "Please check your credentials and try again.");
+      res.status(400).render("./account/login", {
+        title: "Login",
+        nav,
+        errors: null,
+        account_email,
+      });
     }
   } catch (error) {
     return new Error('Access Forbidden')
