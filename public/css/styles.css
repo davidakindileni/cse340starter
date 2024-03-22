@@ -413,7 +413,7 @@ textarea:required:invalid, textarea:focus:invalid {
   outline: none;
   border: none;
   text-decoration: none;
-  text-transform: capitalize;
+  text-transform: none;
   transition: .2s linear;
   background-color: #F9F6EE;
 }
@@ -483,7 +483,7 @@ textarea:required:invalid, textarea:focus:invalid {
   outline: none;
   border: none;
   text-decoration: none;
-  text-transform: capitalize;
+  text-transform: none;
   transition: .2s linear;
   background-color: #F9F6EE;
 }
@@ -622,7 +622,7 @@ textarea:required:invalid, textarea:focus:invalid {
     outline: none;
     border: none;
     text-decoration: none;
-    text-transform: capitalize;
+    text-transform: None;
     transition: .2s linear;
     background-color: #F9F6EE;
   }
