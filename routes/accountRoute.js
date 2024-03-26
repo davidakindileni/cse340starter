@@ -36,5 +36,12 @@ router.get("/",
     utilities.handleErrors(accountController.buildAcctMgmt)
 );
 
+// Logout
+router.get("/logout", function(req, res){
+    res.clearCookie("sessionId");
+    res.clearCookie("jwt");
+    res.redirect("../");
+});
+
 
 module.exports = router;
