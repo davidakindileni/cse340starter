@@ -17,6 +17,8 @@
     
     <!-- The Account Management View -->
     <div class="acctMgmtMenu">
-        <p class="login-successful-msg">You're logged in.</p>
+      <h2>Welcome <%- locals.accountData.account_firstname %></h2>
+      <p class="login-successful-msg">You're logged in.</p>
+      <p class="editAcctInfo"><a href="/account/editAcctInfo" title="Edit Account Information">Edit Account Information</a></p>
     </div>
 </div>

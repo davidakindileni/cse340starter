@@ -1,3 +1,5 @@
+//jshint esversion:6
+
 const jwt = require("jsonwebtoken")
 require("dotenv").config()
 const invModel = require("../models/inventory-model")

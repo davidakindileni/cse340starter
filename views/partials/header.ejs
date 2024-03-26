@@ -6,8 +6,6 @@
     <% if (!locals.loggedin) { %>
     <a title="Click to log in" href="/account/login">My Account</a> <% } else {
     %>
-    <a title="Manage my account" href="/account/login"
-      >Welcome <%- locals.accountData.account_firstname %> | </a
-    ><a title="Click to log out" href="/account/logout">Logout</a><% } %>
+    <a title="Manage my account" href="/account/login">Welcome <%- locals.accountData.account_firstname %> | </a><a title="Click to log out" href="/account/logout">Log Out</a><% } %>
   </div>
 </header>

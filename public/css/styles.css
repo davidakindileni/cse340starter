@@ -1,11 +1,11 @@
 @font-face {
-  font-family : 'Share Tech Mono';
-  font-style : normal;
-  font-weight : 400;
-  font-display : swap;
-  src : url(https://fonts.gstatic.com/s/sharetechmono/v15/J7aHnp1uDWRBEqV98dVQztYldFcLowEF.woff2) format('woff2');
-  unicode-range : U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-  }
+  font-family: 'Share Tech Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/sharetechmono/v15/J7aHnp1uDWRBEqV98dVQztYldFcLowEF.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
 /******* For screens < 750 px ***************/
 
@@ -15,9 +15,11 @@
 
 body {
   margin: 0px auto 10px auto;
-  max-width: 750px/* fit-content */;
+  max-width: 750px
+    /* fit-content */
+  ;
   font-family: 'Poppins', sans-serif;
-  background-size: 300px 300px; 
+  background-size: 300px 300px;
 }
 
 #top-header {
@@ -26,7 +28,7 @@ body {
 
 #top-header a {
   text-decoration: none;
-  font-size: clamp(1rem, 0.5vw,1.5rem);
+  font-size: clamp(1rem, 0.5vw, 1.5rem);
   color: #333;
 }
 
@@ -63,7 +65,7 @@ h1 {
 }
 
 h2 {
-  color:#09345a;
+  color: #09345a;
 }
 
 #bottom {
@@ -79,7 +81,7 @@ hr {
 
 nav {
   margin-top: -18px;
-  background-color:#3a3a3a;
+  background-color: #3a3a3a;
   height: 2.8em;
 }
 
@@ -126,12 +128,12 @@ nav ul li a:hover {
 }
 
 #aboutCar p {
-      position: absolute;
-      margin: 0;
-      font-size: .8rem;
-      font-weight: bold;
-      color: #092238;
-      z-index: 10;
+  position: absolute;
+  margin: 0;
+  font-size: .8rem;
+  font-weight: bold;
+  color: #092238;
+  z-index: 10;
 }
 
 #aboutCar p:nth-child(2) {
@@ -166,7 +168,7 @@ nav ul li a:hover {
   background-color: #FAF9F6;
   opacity: 0.8;
   position: absolute;
-  left:45px;
+  left: 45px;
   width: 165px;
   height: 135px;
   top: 5px;
@@ -227,7 +229,7 @@ nav ul li a:hover {
   padding: 5px;
 }
 
-#col2 ul li{
+#col2 ul li {
   padding-bottom: 5px;
 }
 
@@ -270,6 +272,7 @@ footer p {
   padding-left: 15px;
   margin: 20px 0;
 }
+
 /*--------------- Login Form ------------------*/
 
 .form-container {
@@ -278,11 +281,11 @@ footer p {
   width: 100%;
   height: 100%;
 }
-        
+
 .form-container label {
-  font-size: 0.9rem; 
+  font-size: 0.9rem;
 }
-        
+
 .form-content {
   background-color: #7bccf1;
   margin: 3% auto 3% auto;
@@ -297,7 +300,11 @@ footer p {
   padding: 15px;
 }
 
-.form-container input[type=text], input[type=email], input[type=password], textarea, select {
+.form-container input[type=text],
+input[type=email],
+input[type=password],
+textarea,
+select {
   width: 95%;
   padding: 5px 10px;
   margin: 4px 0;
@@ -305,7 +312,7 @@ footer p {
   border: 1px solid #ccc;
   box-sizing: border-box;
   overflow-wrap: normal;
-  font-size: 0.8em; 
+  font-size: 0.8em;
 }
 
 textarea {
@@ -335,11 +342,11 @@ textarea {
   width: fit-content;
   text-align: center;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
 }
 
 .submit-btn {
-  margin:0;
+  margin: 0;
   text-align: center;
   align-items: center;
 }
@@ -348,14 +355,16 @@ textarea {
   opacity: 0.8;
 }
 
-.pwd-text, .fields-req {
+.pwd-text,
+.fields-req {
   font-size: 0.8rem;
   font-style: italic;
 }
 
 .fields-req {
   margin: 5px 0 5px 5px;
-  color: #112A46;;
+  color: #112A46;
+  ;
 }
 
 .signup {
@@ -388,20 +397,32 @@ textarea {
   font-weight: bold;
 }
 
-.login-successful-msg {
+.login-successful-msg,
+.editAcctInfo,
+.acctMgmtMenu h2 {
   margin-left: 15px;
 }
 
-/*--------------- Form Validation ------------------*/
-input:required:invalid, input:focus:invalid, select:required:invalid, select:focus:invalid,
-textarea:required:invalid, textarea:focus:invalid {
-  /* insert your own styles for invalid form input */
-    background-color: rgb(228, 187, 172);
+.editAcctInfo {
+  margin-bottom: 15px;
 }
 
- input:required:valid, select:required:valid, textarea:required:valid {
+/*--------------- Form Validation ------------------*/
+input:required:invalid,
+input:focus:invalid,
+select:required:invalid,
+select:focus:invalid,
+textarea:required:invalid,
+textarea:focus:invalid {
+  /* insert your own styles for invalid form input */
+  background-color: rgb(228, 187, 172);
+}
+
+input:required:valid,
+select:required:valid,
+textarea:required:valid {
   /* insert your own styles for valid form input */
-    background-color: rgb(155, 221, 142);
+  background-color: rgb(155, 221, 142);
 }
 
 /*--------------- Vehicle Inventory Display ------------------*/
@@ -419,7 +440,7 @@ textarea:required:invalid, textarea:focus:invalid {
 }
 
 .container .veh-container .veh-card {
-  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
   border-radius: 5px;
   background: #fff;
   text-align: center;
@@ -438,15 +459,15 @@ textarea:required:invalid, textarea:focus:invalid {
   justify-content: center;
   text-align: center;
   background-color: #E5E4E2;
-  }
+}
 
-.container .veh-container .veh-card img{
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100px;
-    object-fit: contain;
-    object-position: center;
+.container .veh-container .veh-card img {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100px;
+  object-fit: contain;
+  object-position: center;
 }
 
 .container .veh-container .namePrice hr {
@@ -456,22 +477,22 @@ textarea:required:invalid, textarea:focus:invalid {
   margin-bottom: 2px;
 }
 
-.container .veh-container .namePrice h2{
-    color:#444;
-    font-size: max(0.5vw, 30%, 1rem);
-    margin: 0;
-    padding: 5px 0;
+.container .veh-container .namePrice h2 {
+  color: #444;
+  font-size: max(0.5vw, 30%, 1rem);
+  margin: 0;
+  padding: 5px 0;
 }
 
-.container .veh-container .namePrice p{
-    color:#777;
-    font-size: 15px;
-    line-height: 1.8;
+.container .veh-container .namePrice p {
+  color: #777;
+  font-size: 15px;
+  line-height: 1.8;
 }
 
-.container .veh-container .veh-card:hover{
-    box-shadow: 0 10px 15px rgba(0,0,0,.3);
-    transform: scale(1.03);
+.container .veh-container .veh-card:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
+  transform: scale(1.03);
 }
 
 /*--------------- Vehicle Details ------------------*/
@@ -507,7 +528,10 @@ textarea:required:invalid, textarea:focus:invalid {
   text-align: center;
 }
 
-.price-label, .description-label, .color-label, .miles-label {
+.price-label,
+.description-label,
+.color-label,
+.miles-label {
   font-weight: bold;
 }
 
@@ -537,48 +561,48 @@ textarea:required:invalid, textarea:focus:invalid {
   .hide-sm {
     display: initial;
   }
-  
+
   h1 {
-      text-align: left;
-      padding: 10px 0 10px 10px;
-      margin: 0 0 -8px 0;
-      font-size: 2.5vw;
+    text-align: left;
+    padding: 10px 0 10px 10px;
+    margin: 0 0 -8px 0;
+    font-size: 2.5vw;
   }
 
   #aboutCar h2 {
-      position: absolute;
-      top: -12px;
+    position: absolute;
+    top: -12px;
   }
 
   #aboutCar-det {
     margin-left: 50px;
   }
-  
+
   #aboutCar p:nth-child(2) {
-      top: 45px;
+    top: 45px;
   }
 
   #aboutCar p:nth-child(3) {
-      top: 60px;
+    top: 60px;
   }
 
   #aboutCar p:nth-child(4) {
-      top: 75px;
+    top: 75px;
   }
 
   nav ul {
-      text-align: center;
-      padding-left: 30px;
+    text-align: center;
+    padding-left: 30px;
   }
 
   nav ul li a {
-      margin: 0px 30px;
-      font-size: 1.1rem;
+    margin: 0px 30px;
+    font-size: 1.1rem;
   }
 
   body {
-      margin-top: 10px;
-      background-image: url("../images/site/checkerboard.jpg");
+    margin-top: 10px;
+    background-image: url("../images/site/checkerboard.jpg");
   }
 
   body img {
@@ -586,31 +610,31 @@ textarea:required:invalid, textarea:focus:invalid {
   }
 
   #aboutCar button {
-      position: absolute;
-      left: 50px;
-      top: 100px;
-      width: 100px;
-      height: 30px;
-      background-color: #09345a;
-      color: #fff;
-      border: 1px solid #3a3a3a
+    position: absolute;
+    left: 50px;
+    top: 100px;
+    width: 100px;
+    height: 30px;
+    background-color: #09345a;
+    color: #fff;
+    border: 1px solid #3a3a3a
   }
 
   #wrapper {
-      border: #4c96d7 5px solid;
-      border-radius: 10px;
+    border: #4c96d7 5px solid;
+    border-radius: 10px;
   }
 
   #base {
-      display: flex;
-      flex-direction: row;
+    display: flex;
+    flex-direction: row;
   }
 
   footer {
     text-align: left;
     padding-left: 12px;
   }
-  
+
   footer p {
     padding-left: 12px;
   }
@@ -626,7 +650,7 @@ textarea:required:invalid, textarea:focus:invalid {
     transition: .2s linear;
     background-color: #F9F6EE;
   }
-  
+
   .container .veh-container #inv-display {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -638,7 +662,7 @@ textarea:required:invalid, textarea:focus:invalid {
     justify-content: center;
     text-align: center;
     background-color: #E5E4E2;
-    }
+  }
 
   /*--------------- Vehicle Details ------------------*/
 
@@ -650,11 +674,11 @@ textarea:required:invalid, textarea:focus:invalid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
-    }
+  }
 
   .veh-particulars {
     margin: 0 20px;
-  } 
+  }
 
   .veh-particulars h2 {
     margin-top: 0;
@@ -662,15 +686,19 @@ textarea:required:invalid, textarea:focus:invalid {
     text-align: center;
   }
 
-  .form-container input[type=text], input[type=email], input[type=password], textarea, select {
+  .form-container input[type=text],
+  input[type=email],
+  input[type=password],
+  textarea,
+  select {
     width: 18rem;
     padding: 5px 10px;
     margin: 4px 0;
     display: block;
     border: 1px solid #ccc;
     box-sizing: border-box;
-    font-size: 1.2vw; 
+    font-size: 1.2vw;
   }
-  
- 
+
+
 }
