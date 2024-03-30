@@ -385,26 +385,35 @@ textarea {
   font-size: 12px;
   border-radius: 12px;
   background-color: black;
-  padding: 5px;
   color: #fff;
+  padding: 5px;
 
 }
 
 .show-pwd-btn:hover {
-  margin-top: 7px;
   background-color: #fff;
   color: #09345a;
   font-weight: bold;
 }
 
-.login-successful-msg,
-.editAcctInfo,
-.acctMgmtMenu h2 {
-  margin-left: 15px;
+.mt-10px {
+  margin-top: 10px;
 }
 
-.editAcctInfo {
+.mt-15px {
+  margin-top: 15px;
+}
+
+.mr-15px {
+  margin-right: 15px;
+}
+
+.mb-15px {
   margin-bottom: 15px;
+}
+
+.ml-15px {
+  margin-left: 15px;
 }
 
 /*--------------- Form Validation ------------------*/

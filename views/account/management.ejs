@@ -16,9 +16,13 @@
       <% } %>
     
     <!-- The Account Management View -->
-    <div class="acctMgmtMenu">
+    <div class="acctMgmtMenu ml-15px">
       <h2>Welcome <%- locals.accountData.account_firstname %></h2>
       <p class="login-successful-msg">You're logged in.</p>
-      <p class="editAcctInfo"><a href="/account/editAcctInfo" title="Edit Account Information">Edit Account Information</a></p>
+      <p class="editAcctInfo mb-15px"><a href= <%- "/account/update/" +  locals.accountData.account_id %> title="Edit Account Information">Edit Account Information</a></p>
+      <% if (!(locals.accountData.account_type == "Client")) { %>
+            <h3 class="invMgmt-h3">Inventory Management</h3>
+            <p class="manageInv mb-15px"><a href="/inv/" title="Manage Inventory">Manage Inventory</a></p>
+      <% } %>
     </div>
 </div>

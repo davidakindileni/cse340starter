@@ -17,7 +17,7 @@
     
     <!-- The Register View -->
     <div class="form-container">
-        <form class="login-form" action="/account/register" method = "post">
+        <form class="reg-acct-frm" action="/account/register" method = "post">
             <div class="form-content">
                 <p class="fields-req">*** All fields are required. ***</p>
                 <div class="form-fields">
@@ -30,7 +30,8 @@
                     <label for="account_password"><b>Password:</b></label><br>
                     <input type="password" id="account_password" name="account_password" placeholder="Enter your password" 
                     pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$" required>
-                    <span class="show-pwd-btn">Show password</span><p class="pwd-text">(Passwords must be at least 12 characters and include one uppercase letter, one lowercase letter, one number, and one non-alphanumeric character.)</p>
+                    <button class="show-pwd-btn">Show password</button>
+                    <p class="pwd-text">(Passwords must be at least 12 characters and include one uppercase letter, one lowercase letter, one number, and one non-alphanumeric character.)</p>
                     <button class="submit-btn" type="submit" name="register">Register</button>
                 </div>
             </div>

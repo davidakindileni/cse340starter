@@ -36,12 +36,23 @@ router.get("/",
     utilities.handleErrors(accountController.buildAcctMgmt)
 );
 
+// Account Update View
+router.get("/update/:account_id", utilities.handleErrors(accountController.buildAcctUpdate))
+
+// Route to update user Account details
+router.post("/update/acct",
+    regValidate.acctUpdateRules(),
+    regValidate.checkAcctUpdate,
+    utilities.handleErrors(accountController.accountUpdate))
+
+// Route to change a user's password
+router.post("/update/pwd",
+    regValidate.pwdUpdateRules(),
+    regValidate.checkPwdUpdate,
+    utilities.handleErrors(accountController.passwordUpdate))
+
 // Logout
-router.get("/logout", function(req, res){
-    res.clearCookie("sessionId");
-    res.clearCookie("jwt");
-    res.redirect("../");
-});
+router.get("/logout", utilities.handleErrors(accountController.logout));
 
 
 module.exports = router;

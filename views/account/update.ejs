@@ -1,0 +1,66 @@
+<!-- The Content Heading -->
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <% } else {
+        res.redirect('/')
+    } %>
+
+<%- messages() %>
+<% if (errors) { %>
+    <ul class="notice">
+    <% errors.array().forEach(error => { %>
+        <li><%= error.msg %></li>
+    <%  }) %>
+    </ul>
+    <% } %>
+
+<!-- The Account Update View -->
+<div class="form-container">
+    <form id="acctUpdateFrm" action="/account/update/acct" method = "post">
+        <div class="form-content">
+            <div class="form-fields">
+                <label for="account_firstname"><b>First name:</b></label>
+                <input type="text" id="account_firstname" name="account_firstname" placeholder="First name" autofocus required value="<%= locals.account_firstname %>">
+                <label for="account_lastname"><b>Last name:</b></label>
+                <input type="text" id="account_lastname" name="account_lastname" placeholder="Last name" required value="<%= locals.account_lastname %>">
+                <label for="account_email"><b>Email Address:</b></label>
+                <input type="email" id="account_email" name="account_email" placeholder="youremail@email.com" required value="<%= locals.account_email %>">
+                <button class="update-btn  mt-10px" type="submit" name="update" disabled>Update details</button>
+                <input type="hidden" name="account_id" <% if(locals.account_id) { %> value="<%= locals.account_id %>" <% } %>>
+            </div>
+        </div>
+    </form>
+    <form id="pwdChangeFrm" action="/account/update/pwd" method = "post">
+        <div class="form-content">
+            <div class="form-fields">
+                <h2>Update Password</h2>
+                <label for="account_password"><b>New Password:</b></label><br>
+                <input type="password" id="account_password" name="account_password" placeholder="Enter your new password" 
+                pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$" required>
+                <button class="show-pwd-btn">Show password</button>
+                <p class="pwd-text">(Passwords must be at least 12 characters and include one uppercase letter, one lowercase letter, one number, and one non-alphanumeric character.)</p>
+                <!-- <span class="show-pwd-btn">Show password</span><p class="pwd-text">(Passwords must be at least 12 characters and include one uppercase letter, one lowercase letter, one number, and one non-alphanumeric character.)</p> -->
+                <button class="submit-btn mt-10px" type="submit" name="update">Change Password</button>
+                <input type="hidden" name="account_id" <% if(locals.account_id) { %> value="<%= locals.account_id %>" <% } %>>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    // show or hide password
+    const pwdBtn = document.querySelector(".show-pwd-btn");
+    pwdBtn.addEventListener("click", function () {
+        const pwdInput = document.getElementById("account_password");
+        const pwdType = pwdInput.getAttribute("type");
+        if (pwdType === "password") {
+            pwdInput.setAttribute("type", "text");
+            pwdBtn.innerHTML = "Hide password";
+        } else {
+            pwdInput.setAttribute("type", "password");
+            pwdBtn.innerHTML = "Show password";
+        }
+    })
+</script>
+
+<script src="../../js/acct-update.js "></script>
+

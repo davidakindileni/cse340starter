@@ -1,5 +1,3 @@
-//jshint esversion:6
-
 const jwt = require("jsonwebtoken")
 require("dotenv").config()
 const invModel = require("../models/inventory-model")
@@ -134,6 +132,31 @@ Util.checkJWTToken = (req, res, next) => {
    next()
   }
  }
+
+/* ****************************************
+* Middleware to check logged-in user's authroization
+**************************************** */
+Util.checkEmpAuth = async function(req, res, next){
+  let nav = await Util.getNav()
+  if (res.locals.loggedin) {
+    if (!(res.locals.accountData.account_type == "Client")) {
+      next()
+    } else {
+      message = "You do not have access to this route.\n Please login with authorized credentials or try other links.";
+      res.render("errors/error", {
+        // res.status(401).render("errors/error", {
+        title: 'Access Denied.',
+        // title: err.status || 'Access Denied.',
+        message,
+        nav
+      });
+    }
+  } else {
+      req.flash("notice", "Please log in.")
+      return res.redirect("/account/login")
+  }
+}
+
 
 /* ****************************************
  *  Check Login

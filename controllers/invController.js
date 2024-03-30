@@ -282,7 +282,6 @@ invCont.confirmDelete = async function (req, res, next) {
 *  Delete Inventory Data
 * *************************************** */
 invCont.deleteInventory = async function(req, res, next) {
-  console.log("in delete inventory")
   let nav = await utilities.getNav()
   const {
     inv_id,
