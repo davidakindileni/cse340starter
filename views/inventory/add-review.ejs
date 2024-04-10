@@ -1,0 +1,55 @@
+<!-- The Content Heading -->
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <% } else {
+        res.redirect('/')
+} %>
+
+<%- messages() %>
+<% if (errors) { %>
+        <ul class="notice">
+            <% errors.array().forEach(error => { %>
+                <li><%= error.msg %></li>
+            <%  }) %>
+        </ul>
+<% } %>
+
+<!-- The Add New Vehicle  View -->
+<div class="form-container">
+    <form class="add-review" action="/inv/review" method = "post">
+        <div class="form-content">
+            <p class="fields-req">*** All fields are required. ***</p>
+            <div class="form-fields">
+                <fieldset>
+                    <legend>Ratings:</legend>
+                        <div>
+                            <input type="radio" id="rating1" name="review_rating" value="1" />
+                            <label for="rating1">1</label>
+                    
+                            <input type="radio" id="rating2" name="review_rating" value="2" />
+                            <label for="rating2">2</label>
+                    
+                            <input type="radio" id="rating3" name="review_rating" value="3" />
+                            <label for="rating3">3</label>
+                    
+                            <input type="radio" id="rating4" name="review_rating" value="4" />
+                            <label for="rating4">4</label>
+                    
+                            <input type="radio" id="rating5" name="review_rating" value="5" checked/>
+                            <label for="rating5">5</label>
+                        </div>
+                </fieldset>
+                
+                <label for="review_text"><b>Comments:</b></label>
+                <textarea wrap="soft" id="review_text" name="review_text" required><%= locals.review_text %></textarea>
+
+                <button class="submit-btn" type="submit" name="sub-review">Submit Review</button>
+                <input type="hidden" name="inv_id" <% if(locals.inv_id) { %> value="<%= locals.inv_id %>" <% } %>>
+                <input type="hidden" name="account_id" <% if(locals.accountData.account_id) { %> value="<%= locals.accountData.account_id %>" <% } %>>
+
+            </div>
+        </div>
+    </form>
+</div>
+
+

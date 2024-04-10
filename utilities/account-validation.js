@@ -341,6 +341,10 @@ validate.acctUpdateRules = () => {
       .normalizeEmail() // refer to validator.js docs
       .withMessage("A valid email is required.")
       .custom(async (account_email) => {
+        let old_email = req.cookie.acct_email
+        // if (account_email.value == account_email.defaultValue) {
+        //   alert("No change in email")
+        // }
         const emailExists = await accountModel.checkExistingEmail(account_email)
         if (emailExists){
           throw new Error("Email exists. Please log in or use different email")
@@ -412,7 +416,47 @@ validate.checkPwdUpdate = async (req, res, next) => {
   next()
 }
  
+/*  **********************************
+ *  Add Vehicle Review  Validation Rules
+ * ********************************* */
+validate.addReviewRules = () => {
+  return [
+    // a rating must be selected
+    body("review_rating")
+      .not().isEmpty()
+      .withMessage("Please provide a rating."), // on error this message is sent.
 
+    // review text is required and must be string
+    body("review_text")
+      .trim()
+      .isLength({ min: 10 })
+      .withMessage("Please provide adequate review."), // on error this message is sent.
+  ]
+}
+
+  /* ******************************
+ * Check data and return errors or continue to add new new vehicle review
+ * ***************************** */
+  validate.checkReviewData = async (req, res, next) => {
+    const {
+      review_rating,
+      review_text,
+      } = req.body
+    let errors = []
+    errors = validationResult(req)
+    if (!errors.isEmpty()) {
+      let nav = await utilities.getNav()
+      res.render("./inventory/add-review", {
+        errors,
+        title: "Add Vehicle Review",
+        nav,
+        review_rating,
+        review_text,
+      })
+      return
+    }
+    next()
+  }
 
   
 module.exports = validate

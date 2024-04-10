@@ -62,7 +62,9 @@ Util.buildClassificationGrid = async function(data){
 /* **************************************
 * Build the vehicle details view HTML
 * ************************************ */
-Util.buildVehicleGrid = async function(data){
+Util.buildVehicleGrid = async function(data, revData){
+
+  // This section build the vehicle details
   let grid
   let vehicle = data[0]
   if(data.length > 0){
@@ -82,6 +84,25 @@ Util.buildVehicleGrid = async function(data){
   } else { 
     grid += '<p class="notice">Sorry, no matching vehicle could be found.</p>'
   }
+
+  // This section build the vehicle reviews
+  grid += '<div class="reviews-container">'
+    grid += '<h4 class="ml-15px mt-15px">Customer reviews --- Total reviews: ' + revData.length + '</h4>'
+    grid += '<p class="ml-15px"><a href="/inv/review/' + vehicle.inv_id +'"><button class="submit-btn mb-15px" type="button" name="review">Add Review?</button></a></p>' 
+    if(revData.length > 0){
+      grid += '<div class="review-card">'
+      grid += '<p class="ml-15px">-------------------</p>'
+      revData.forEach(review => {
+        grid += '<p class="ml-15px">Client: <span>'+ review.account_firstname + ' ' + review.account_lastname + '</span></p>'
+        grid += '<p class="ml-15px">Rating: <span>'+ review.review_rating + '</span></p>'
+        grid += '<p class="ml-15px"><span>Comments: </span><span> ' + review.review_text + '</span></p>'
+        grid += '<p class="ml-15px" >-------------------</p>'
+      grid += '</div>'
+      })
+    } else { 
+      grid += '<p class="notice ml-15px">The vehicle has no reviews yet.</p>'
+    }
+  grid += '</div>'
   return grid
 }
 

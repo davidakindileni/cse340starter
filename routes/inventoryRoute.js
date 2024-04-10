@@ -4,6 +4,7 @@ const express = require("express")
 const router = new express.Router()
 const utilities = require("../utilities/")
 const invController = require("../controllers/invController")
+const revController = require("../controllers/reviewsController")
 
 // Build inventory by classification view route
 router.get("/type/:classificationId", utilities.handleErrors(invController.buildByClassificationId));
@@ -15,9 +16,9 @@ router.get("/addNewClass", utilities.checkEmpAuth,
 
 // Process New Classification Route
 router.post("/addNewClass",
-    invValidate.addNewClassRules(),
-    invValidate.checkClassData,
-    utilities.handleErrors(invController.processNewClass)
+    invValidate.addReviewRules(),
+    invValidate.checkReviewData,
+    utilities.handleErrors(revController.addNewReview)
 );
 
 // Build vehicle details for vehicle view route
@@ -55,6 +56,20 @@ router.get("/delete/:inv_id", utilities.checkEmpAuth, utilities.handleErrors(inv
 
 // Route to delete inventory (vehicle)
 router.post("/delete/", utilities.handleErrors(invController.deleteInventory))
+
+// Add Vehicle Review
+router.get("/review/:inv_id",  utilities.checkEmpAuth,
+    utilities.handleErrors(revController.addReview)
+);
+
+// Process Vehicle Review
+router.post("/review/",
+    invValidate.addReviewRules(),
+    invValidate.checkReviewData,
+    utilities.handleErrors(revController.processNewReview)
+);
+
+
 
 
 module.exports = router;

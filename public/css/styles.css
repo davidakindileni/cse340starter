@@ -540,7 +540,8 @@ textarea:required:valid {
 .price-label,
 .description-label,
 .color-label,
-.miles-label {
+.miles-label,
+.field-label {
   font-weight: bold;
 }
 
@@ -559,10 +560,21 @@ textarea:required:valid {
   font-size: 12px;
 }
 
+/*--------------- Reviews ------------------*/
 
-/*--------------- Add New Vehicle ------------------*/
+/* .reviews-container {
+  margin-bottom: 0;
+} */
 
+.reviews-container h4 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
+.reviews-container p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 
 
 
